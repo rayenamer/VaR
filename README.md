@@ -22,7 +22,7 @@ The formula:
 VaR = mean − z × standard deviation
 ```
 
-`z` comes from a standard normal table. It's 1.645 at 95% and 2.326 at 99% [[3]](#sources). The video rounds these to 1.65 and 2.33.
+`z` is a [z-score](z-score.md), which you read from a [normal distribution](normal-distribution.md) table. It's 1.645 at 95% and 2.326 at 99% [[3]](#sources). The video rounds these to 1.65 and 2.33.
 
 | Confidence | z | VaR |
 |---|---|---|
@@ -40,15 +40,17 @@ At 95% confidence, you don't expect to lose more than 0.65% over the year. Anyth
 **1. Parametric (variance-covariance).**
 You assume a mean, a standard deviation and a distribution (usually normal), then plug them into the formula above. That's what the example did [[2]](#sources).
 
+→ [See the maths](examples.md#parametric)
+
 **2. Historical.**
 This is the easiest one to follow. Take your past returns, say the last 100 days, and sort them from worst to best. For 95% VaR, the 5th-worst day is your answer [[2]](#sources). You don't have to assume any distribution, because you're just using what actually happened.
 
-![100 daily returns sorted worst to best, 5th worst highlighted](images/historical_var.svg)
-
-*(The returns in this chart are made up for illustration.)*
+→ [See the maths](examples.md#historical)
 
 **3. Monte Carlo.**
 You set your assumptions (mean, standard deviation, distribution) and have a computer simulate lots of possible outcomes, for example 1,000. Then you sort the results and read off the percentile you need, like the 5th percentile for 95% VaR [[2]](#sources).
+
+→ [See the maths](examples.md#monte-carlo)
 
 ## Sources
 
